@@ -1,7 +1,7 @@
-import SeedPhrase from "./seedPhraseComponent"
-import { UserContext, UserDispatchContext } from "../context/userContext"
 import { useReducer } from "react"
-import  userDataReducer from "../reducers/userReducer"
+import { UserContext, UserDispatchContext } from "../context/userContext"
+import userDataReducer from "../reducers/userReducer"
+import SeedPhrase from "./seedPhraseComponent"
 
 function UserContainer() {
     const [userData, userDataDispatcher] = useReducer(userDataReducer, initialUserData)
@@ -18,7 +18,7 @@ const initialUserData = {
     seed: [
         {
             id:1,
-            value: "sdsd"
+            value: ""
         },
         {
             id:2,
