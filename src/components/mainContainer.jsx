@@ -65,14 +65,28 @@ const initialUserData = {
             value: ""
         },
     ],
-    solanaWallets: {
-        deraivedPath: "",
-        wallets: []
-    },
-    etheriumWallet: {
-        deraivedPath: "",
-        wallets: []
-    }
+    wallets: [
+        {
+            walletName: "Solana",
+            deraivedPath: "",
+            accounts: [
+                {
+                    publicKey: "",
+                    privatekey: ""
+                }
+            ]
+        },
+        {
+            walletName: "Etherium",
+            deraivedPath: "",
+            accounts: [
+                {
+                    publicKey: "",
+                    privatekey: ""
+                }
+            ]
+        }
+    ]
 }
 
 export default UserContainer

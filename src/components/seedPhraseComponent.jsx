@@ -3,6 +3,7 @@ import SeedInput from "./SeedInput"
 import  "../css/seedInputStyle.css"
 import { useContext } from "react"
 import { UserContext } from "../context/userContext"
+import Wallet from "./Wallet"
 
 
 
@@ -39,6 +40,15 @@ function SeedPhrase() {
                 console.log(userData)
             }}>Generate Wallet</button>
         </div>
+        <br />
+        {
+            userData.wallets.map(wallet => {
+                return <div key={wallet.walletName}>
+                    <Wallet data = {wallet}/>
+                    <br></br>
+                </div>
+            })
+        }
     </>
 }
 
