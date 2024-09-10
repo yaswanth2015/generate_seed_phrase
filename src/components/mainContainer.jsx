@@ -2,6 +2,7 @@ import { useReducer } from "react"
 import { UserContext, UserDispatchContext } from "../context/userContext"
 import userDataReducer from "../reducers/userReducer"
 import SeedPhrase from "./seedPhraseComponent"
+import * as Constants from "../Constants/WalletNames.js"
 
 function UserContainer() {
     const [userData, userDataDispatcher] = useReducer(userDataReducer, initialUserData)
@@ -67,23 +68,21 @@ const initialUserData = {
     ],
     wallets: [
         {
-            walletName: "Solana",
-            deraivedPath: "",
+            walletName: Constants.SOLANA_WALLET,
             accounts: [
-                {
-                    publicKey: "",
-                    privatekey: ""
-                }
+                // {
+                //     publicKey: "",
+                //     privateKey: ""
+                // }
             ]
         },
         {
-            walletName: "Etherium",
-            deraivedPath: "",
+            walletName: Constants.ETHERIUM_WALLET,
             accounts: [
-                {
-                    publicKey: "",
-                    privatekey: ""
-                }
+                // {
+                //     publicKey: "",
+                //     privateKey: ""
+                // }
             ]
         }
     ]

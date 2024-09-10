@@ -2,8 +2,10 @@ import { Col, Container, Row } from "react-bootstrap"
 import SeedInput from "./SeedInput"
 import  "../css/seedInputStyle.css"
 import { useContext } from "react"
-import { UserContext } from "../context/userContext"
+import { UserContext, UserDispatchContext } from "../context/userContext"
 import Wallet from "./Wallet"
+import checkSeedIsValid from "../utils/generateSeed"
+import * as Constants from "../actions/userDataReducerAction"
 
 
 
@@ -11,6 +13,7 @@ import Wallet from "./Wallet"
 
 function SeedPhrase() {
     const userData = useContext(UserContext)
+    const userDataDispatcher = useContext(UserDispatchContext)
     return <>
         <Container>
             <Row>
@@ -37,7 +40,11 @@ function SeedPhrase() {
         <br />
         <div className="d-grid gap-2">
             <button className="btn btn-primary btn-lg" type="button" onClick={()=>{
-                console.log(userData)
+                const verifiedSeed = checkSeedIsValid(userData.seed)
+                userDataDispatcher({
+                    type: Constants.UPDATE_ALL_SEEDS,
+                    allSeeds: verifiedSeed
+                })
             }}>Generate Wallet</button>
         </div>
         <br />

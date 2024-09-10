@@ -2,7 +2,7 @@ import TextFieldHider from "./TextFieldHider"
 import "../css/account.css"
 
 function Account(props) {
-    const privatekey = props.accountdata.privatekey
+    const privatekey = props.accountdata.privateKey
     const publicKey = props.accountdata.publicKey
 
     return <>

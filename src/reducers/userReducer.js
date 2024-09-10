@@ -5,8 +5,41 @@ export default function userDataReducer(userData, action) {
         case Constants.SEED_UPDATE:
             return updateSeed(userData, action.id, action.text)
 
+        case Constants.UPDATE_ALL_SEEDS:
+            return updateAllSeedsInArray(userData, action.allSeeds)
+
+        case Constants.ADD_WALLET:
+            return addWallet(userData, action.walletName, action.wallet)
+
         default:
             return userData
+    }
+}
+
+function addWallet(userData, walletName, wallet) {
+    const wallets = [...userData.wallets]
+    const newWallet = wallets.map((walletObj) => {
+        if (walletObj.walletName === walletName) {
+            return {
+                ...walletObj,
+                accounts: [...walletObj.accounts, wallet]
+            }
+        } else {
+            return {
+                ...walletObj
+            }
+        }
+    })
+    return {
+        ...userData,
+        wallets: newWallet
+    }
+}
+
+function updateAllSeedsInArray(userData, allSeeds) {
+    return {
+        ...userData,
+        seed: allSeeds
     }
 }
 

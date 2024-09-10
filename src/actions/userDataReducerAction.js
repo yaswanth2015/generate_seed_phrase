@@ -1,1 +1,3 @@
 export const SEED_UPDATE = "SEED_UPDATE"
+export const UPDATE_ALL_SEEDS = "UPDATE_ALL_SEEDS"
+export const ADD_WALLET = "ADD_WALLET"
