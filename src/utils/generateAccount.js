@@ -23,7 +23,7 @@ function createAccountForSolana(seedArray, accountNumber) {
 function createAccountForEtherium(seedArray, accountNumber) {
     let seed = createSeedFromSeedObject(seedArray)
     const derivePath = ``
-    //MARK: Add Logic for generating Account For Etherium
+    //MARK: Add Logic for generating Account For Etherium 
     return {
         publicKey: `etherium public ${accountNumber}`,
         privateKey: `etherium private ${accountNumber}`
